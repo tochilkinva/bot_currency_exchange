@@ -307,7 +307,9 @@ def get_codes() -> str:
     cur_date, cur_list = get_currencies_from_cbr()
     for cur in cur_list:
         codes_list.append(f"{cur.letters_code} {cur.currency_name}")
-    return "\n".join(codes_list)
+    before_text = "Список доступных курсов валют и их кодов по отношению к рублю: \n"
+    text = "\n".join(codes_list)
+    return f"{before_text}{text}"
 
 
 def run(in_messege: str) -> str:
